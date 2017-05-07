@@ -104,8 +104,10 @@ prompt_git() {
 }
 
 # Dir: current working directory
+# Shows only the current directory without the full path
+# Case the directory is $HOME, "~" is displayed instead $HOME 
 prompt_dir() {
-  prompt_segment blue $PRIMARY_FG ' %~ '
+  prompt_segment blue $PRIMARY_FG " `basename ${PWD/#$HOME/'~'}` "
 }
 
 # Status:
